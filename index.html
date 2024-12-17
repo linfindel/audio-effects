@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Effects</title>
+
+  <link rel="stylesheet" href="https://linfindel.github.io/nadircss/nadir.css">
+
+  <style>
+    #progress-container {
+      --progress-height: 100%;
+
+      cursor: pointer;
+    }
+
+    #progress-container:hover {
+      --progress-height: 1rem;
+
+      height: 1rem;
+    }
+
+    #progress-bar {
+      height: var(--progress-height);
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar-column">
+    <nav>
+      <h1>Audio Effects</h1>
+    </nav>
+
+    <button onclick="upload()">
+      <span class="material-symbols-rounded" translate="no">upload_file</span>
+      Upload file
+    </button>
+  </div>
+
+  <audio id="audio" loop></audio>
+
+  <div id="controls" style="opacity: 0; pointer-events: none;" class="bottom column">
+    <div id="tooltip" class="tooltip"></div>
+
+    <div id="progress-container" class="progress" style="background-color: rgba(0, 89, 255, 0.25); width: 100%;">
+      <div id="progress-bar" class="progress" style="background-color: rgba(0, 89, 255, 1); width: 0;"></div>
+    </div>
+
+    <div class="row">
+      <button onclick="play()" id="play">
+        <span translate="no" id="play-icon" class="material-symbols-rounded">pause_circle</span>
+        <span id="play-text">Pause</span>
+      </button>
+
+      <button onclick="stop()" id="stop">
+        <span translate="no" class="material-symbols-rounded">stop_circle</span>
+        <span>Stop</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
