@@ -25,7 +25,7 @@
     }
   </style>
 </head>
-<body>
+<body style="height: 100vh; overflow: hidden;">
   <div class="navbar-column">
     <nav>
       <h1>Audio Effects</h1>
@@ -37,7 +37,20 @@
     </button>
   </div>
 
-  <audio id="audio" loop></audio>
+  <div class="card column">
+    <h2>Filters</h2>
+
+    <p>Lowshelf</p>
+  </div>
+
+  <div class="card column">
+    <h2>Values</h2>
+
+    <input oninput="updateFilterValues()" type="number" id="freq" placeholder="Frequency">
+    <input oninput="updateFilterValues()" type="number" id="detune" placeholder="Detune">
+    <input oninput="updateFilterValues()" type="number" id="q" placeholder="Quality">
+    <input oninput="updateFilterValues()" type="number" id="gain" placeholder="Gain">
+  </div>
 
   <div id="controls" style="opacity: 0; pointer-events: none;" class="bottom column">
     <div id="tooltip" class="tooltip"></div>
@@ -58,6 +71,8 @@
       </button>
     </div>
   </div>
+
+  <audio id="audio" loop></audio>
 
   <script src="script.js"></script>
 </body>
